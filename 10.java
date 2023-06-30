@@ -1,27 +1,28 @@
 import java.util.Scanner;
 
-public class {
+public class MayorDeTres {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ingrese el primer número:");
-        int numero1 = scanner.nextInt();
+        System.out.print("Ingrese el primer número: ");
+        int num1 = scanner.nextInt();
 
-        System.out.println("Ingrese el segundo número:");
-        int numero2 = scanner.nextInt();
+        System.out.print("Ingrese el segundo número: ");
+        int num2 = scanner.nextInt();
 
-        System.out.println("Ingrese el tercer número:");
-        int numero3 = scanner.nextInt();
+        System.out.print("Ingrese el tercer número: ");
+        int num3 = scanner.nextInt();
 
-        int mayor = numero1;
+        int mayor = num1;
 
-        if (numero1 > numero2 && numero1 > numero3)
-            mayor = numero1;
-        else if (numero2 > numero1 && numero2 > numero3)
-            mayor = numero2;
-        else
-            mayor = numero3;
+        if (num2 > mayor && num2 > num3) {
+            mayor = num2;
+        }
 
-        System.out.println("El mayor de los tres números es: " + mayor);
-    }
+        if (num3 > mayor && num3 > num2) {
+            mayor = num3;
+        }
+
+        System.out.println("El mayor de los tres números es: " + mayor);
+    }
 }
