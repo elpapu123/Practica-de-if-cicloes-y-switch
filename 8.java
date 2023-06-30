@@ -12,10 +12,26 @@ public class PiedraPapelTijera {
 
         if (jugador1 == jugador2) {
             System.out.println("¡Es un empate!");
-        } else if ((jugador1 == 0 && jugador2 == 2) || (jugador1 == 1 && jugador2 == 0) || (jugador1 == 2 && jugador2 == 1)) {
-            System.out.println("¡Jugador 1 gana!");
+        } else if (jugador1 == 0) {
+            if (jugador2 == 1) {
+                System.out.println("¡Jugador 2 gana!");
+            } else {
+                System.out.println("¡Jugador 1 gana!");
+            }
+        } else if (jugador1 == 1) {
+            if (jugador2 == 0) {
+                System.out.println("¡Jugador 1 gana!");
+            } else {
+                System.out.println("¡Jugador 2 gana!");
+            }
+        } else if (jugador1 == 2) {
+            if (jugador2 == 0) {
+                System.out.println("¡Jugador 2 gana!");
+            } else {
+                System.out.println("¡Jugador 1 gana!");
+            }
         } else {
-            System.out.println("¡Jugador 2 gana!");
+            System.out.println("Opción inválida. Inténtalo nuevamente.");
         }
     }
 }
