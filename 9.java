@@ -1,35 +1,29 @@
 import java.util.Scanner;
 
-public class {
+public class DeterminarGanador {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Competidor 1: Ingresa tu elección (0 - piedra, 1 - papel, 2 - tijera): ");
-        int eleccion1 = scanner.nextInt();
+        System.out.print("Jugador 1 - Ingrese su jugada (0 para piedra, 1 para papel, 2 para tijera): ");
+        int jugadaJugador1 = scanner.nextInt();
 
-        System.out.print("Competidor 2: Ingresa tu elección (0 - piedra, 1 - papel, 2 - tijera): ");
-        int eleccion2 = scanner.nextInt();
+        System.out.print("Jugador 2 - Ingrese su jugada (0 para piedra, 1 para papel, 2 para tijera): ");
+        int jugadaJugador2 = scanner.nextInt();
 
-        String ganador = determinarGanador(eleccion1, eleccion2);
+        boolean jugador1Gana = (jugadaJugador1 == 0 && jugadaJugador2 == 2) ||
+                (jugadaJugador1 == 1 && jugadaJugador2 == 0) ||
+                (jugadaJugador1 == 2 && jugadaJugador2 == 1);
 
-        System.out.println("El ganador es: " + ganador);
+        boolean jugador2Gana = (jugadaJugador2 == 0 && jugadaJugador1 == 2) ||
+                (jugadaJugador2 == 1 && jugadaJugador1 == 0) ||
+                (jugadaJugador2 == 2 && jugadaJugador1 == 1);
 
-        scanner.close();
-    }
-
-    public static String determinarGanador(int eleccion1, int eleccion2) {
-        if (eleccion1 == eleccion2) {
-            return "Empate";
-        } else if ((eleccion1 == 0 && eleccion2 == 2) ||
-                   (eleccion1 == 1 && eleccion2 == 0) ||
-                   (eleccion1 == 2 && eleccion2 == 1)) {
-            return "Competidor 1";
-        } else if ((eleccion1 == 2 && eleccion2 == 0) ||
-                   (eleccion1 == 0 && eleccion2 == 1) ||
-                   (eleccion1 == 1 && eleccion2 == 2)) {
-            return "Competidor 2";
+        if (jugador1Gana) {
+            System.out.println("¡Jugador 1 es el ganador!");
+        } else if (jugador2Gana) {
+            System.out.println("¡Jugador 2 es el ganador!");
         } else {
-            return "Elecciones inválidas";
-        }
-    }
+            System.out.println("Es un empate. ¡Nadie gana!");
+        }
+    }
 }
